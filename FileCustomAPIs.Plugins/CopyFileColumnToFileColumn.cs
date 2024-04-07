@@ -27,6 +27,13 @@ namespace FileCustomAPIs.Plugins
                     string targetColumn = context.InputParameters["TargetColumn"] as string;
                     string newFilename = context.InputParameters["NewFilename"] as string;
 
+                    if (!string.IsNullOrEmpty(sourceTable)) { sourceTable = sourceTable.ToLower(); }
+                    if (!string.IsNullOrEmpty(sourceId)) { sourceId = sourceId.ToLower(); }
+                    if (!string.IsNullOrEmpty(sourceColumn)) { sourceColumn = sourceColumn.ToLower(); }
+                    if (!string.IsNullOrEmpty(targetTable)) { targetTable = targetTable.ToLower(); }
+                    if (!string.IsNullOrEmpty(targetId)) { targetId = targetId.ToLower(); }
+                    if (!string.IsNullOrEmpty(targetColumn)) { targetColumn = targetColumn.ToLower(); }
+
                     // Default Output Parameters
                     bool success = false;
                     string error = "";
